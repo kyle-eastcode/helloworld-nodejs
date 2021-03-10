@@ -1,0 +1,29 @@
+{
+  "name": "helloworld-nodejs",
+  "version": "1.0.0",
+  "description": "A template repository for a sample Cloud Run service, written in NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "clean": "rm -rf ./node_modules ./package-lock.json ./yarn.lock",
+    "ci-install": "npm run clean && npm install",
+    "docker:build": "docker build -t helloworld-nodejs .",
+    "docker:run": "docker run -p 49160:8080 -d helloworld-nodejs",
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle-eastcode/helloworld-nodejs.git"
+  },
+  "keywords": [
+    "gitops"
+  ],
+  "author": "kyle hensman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyle-eastcode/helloworld-nodejs/issues"
+  },
+  "homepage": "https://github.com/kyle-eastcode/helloworld-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
