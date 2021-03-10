@@ -1,15 +1,13 @@
-FROM node:14
-
-RUN mkdir -p /usr/src/app
+FROM node:15
 
 WORKDIR /usr/src/app
 
-COPY package*.json /usr/src/app
+COPY package*.json .
 
-RUN npm install
+RUN npm install --production --silent
 
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 8080
 
-CMD [ "npm ", "start" ]
+CMD node index.js
